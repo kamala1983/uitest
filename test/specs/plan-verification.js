@@ -3,7 +3,7 @@ const HomePage = require('../pageobjects/home.page');
 
 
 describe('subscription application validation', () => {
-    it('validate subscription items', async () => {
+    it('validate subscription plan details', async () => {
         await HomePage.open();
         await HomePage.LanguageBtn.click();
 
