@@ -1,8 +1,8 @@
-import { Given } from 'cucumber';
+import { Given } from '@cucumber/cucumber';
  require('dotenv').config()
 
 
-Given('open the home page', () => {
+Given('open the home page', async () => {
   browser.setTimeout({ 'pageLoad': 60000 })
   browser.setTimeout({ 'implicit': 20000 })
     browser.url(process.env.BASE_URL)

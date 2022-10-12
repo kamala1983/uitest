@@ -22,8 +22,8 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js',
-       // "./test/features/planlisting.feature"
+       // './test/specs/**/*.js',
+      "./test/features/planlisting.feature"
     ],
     // Patterns to exclude.
     exclude: [
@@ -292,4 +292,35 @@ exports.config = {
     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
+
+
+    framework: 'cucumber',
+
+    cucumberOpts: {
+        requireModule: ['@babel/register'],
+        require: ['./test/stepdefinitions/hooks.js', './test/stepdefinitions/given.js', 
+        './test/stepdefinitions/when.js', './test/stepdefinitions/then.js'],
+       // backtrace: true,
+        compiler: ['js:babel-core/register'], 
+      //  compiler: [],
+        failAmbiguousDefinitions: true,
+        dryRun: false,      // <boolean> invoke formatters without executing steps
+        failFast: false,    // <boolean> abort the run on first failure
+        ignoreUndefinedDefinitions: false,    // <boolean> Enable this config to treat undefined definitions as warnings
+        name: [],           // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
+        snippets: true,     // <boolean> hide step definition snippets for pending steps
+        format: ['pretty'], // <string[]> (type[:path]) specify the output format, optionally supply PATH to redirect formatter output (repeatable)
+        colors: true,       // <boolean> disable colors in formatter output
+        snippets: false,    // <boolean> hide step definition snippets for pending steps
+        source: false,      // <boolean> hide source uris
+        profile: [],        // <string[]> (name) specify the profile to use
+        strict: true,       // <boolean> fail if there are any undefined or pending steps
+        //tagExpression:suite,// <string> (expression) only execute the features or scenarios with tags matching the expression, see https://docs.cucumber.io/tag-expressions/
+        tagExpression:'@Runonly',
+        timeout: defaultTimeoutInterval,    // <number> timeout for step definitions
+        tagsInTitle: false,                 // <boolean> add cucumber tags to feature or scenario name
+    //    snippetSyntax: undefined,           // <string> specify a custom snippet syntax
+        overrideReport:true
+    },
+
 }

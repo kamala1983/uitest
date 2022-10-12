@@ -8,12 +8,6 @@ describe('subscription application validation', () => {
         await HomePage.LanguageBtn.click();
 
 
-        let exptPlanDetails =
-        {
-            "LITE": { "itemAmount": "5.4", "itemCurrency": "USD" },
-            "CLASSIC": { "itemAmount": "10.9", "itemCurrency": "USD" },
-            "PREMIUM": { "itemAmount": "16.3", "itemCurrency": "USD" }
-        }
 
         var actPlanDetails =
         {
