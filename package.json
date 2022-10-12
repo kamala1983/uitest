@@ -30,6 +30,7 @@
     "cucumber": "^6.0.7",
     "cucumber-html-reporter": "^5.5.0",
     "dotenv": "^16.0.3",
+    "multiple-cucumber-html-reporter": "^3.0.1",
     "selenium-standalone": "^8.2.2",
     "wdio-cucumberjs-json-reporter": "^4.4.3"
   },

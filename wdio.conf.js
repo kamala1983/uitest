@@ -134,7 +134,40 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec'],
+   // reporters: ['spec'],
+
+
+    reporters: [
+        // 'spec',
+        // ['junit', {
+        //     outputDir: './test/reports/junit-results/',
+        //     outputFileFormat: function (opts) { // optional
+        //         return `results-${opts.cid}.${opts.capabilities}.xml`
+        //     }
+        // }
+        // ],
+
+        // ['allure', {
+        //     outputDir: './test/reports/allure-results/',
+        //     disableWebdriverStepsReporting: true,
+        //     disableWebdriverScreenshotsReporting: false,
+        // }
+        // ],
+
+        'cucumberjs-json',
+
+        // OR like this if you want to set the folder and the language
+        ['cucumberjs-json', {
+            jsonFolder: './test/reports/cucumber-results/',
+            language: 'en',
+            overrideReport: true,
+            //consolidatedReport:true,
+            //detailedAggregatedReport:true
+        },
+        ],
+
+    ],
+
 
 
     
